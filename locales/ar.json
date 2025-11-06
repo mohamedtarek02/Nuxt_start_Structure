@@ -1,0 +1,22 @@
+{
+  "WelcomeHeader": "مرحبا بك فى أروقة",
+  "WelcomeDescription": "اكتشف محتوى رائعًا، وتواصل مع المبدعين، وشارك قصصك الخاصة مع مجتمعنا النابض بالحياة.",
+  "ExploreFeeds": "استكشف المنشورات",
+  "LatestContentTitle": "اخر الاخبار",
+  "LatestContentDesc": "ابق على اطلاع بأحدث المشاركات من مجتمعنا.",
+  "LatestContentLink": "عرض المنشورات",
+  "ConnectWithOthersTitle": "تواصل مع الآخرين",
+  "ConnectWithOthersDesc": "تفاعل مع المبدعين والمستخدمين الآخرين من خلال التعليقات والإعجابات والمشاركات.",
+  "CommingSoon": "قريبًا",
+  "JoinDiscussionsTitle": "انضم إلى المناقشات",
+  "JoinDiscussionsDesc": "شارك في المناقشات وشارك أفكارك حول مواضيع متنوعة.",
+  "SearchPosts": "بحث عن المنشورات",
+  "NoMorePosts": "لا يوجد منشورات أخري",
+  "PostDetails": "تفاصيل المنشور",
+  "BackToFeeds": "الرجوع الي المنشورات",
+  "NewFeeds": "احدث المنشورات",
+  "Home": "الرئيسية",
+  "FailedFetchPost": "لا يمكن تحميل المنشورات، يرجى المحاولة مرة اخرى في وقت لاحق",
+  "Login": "تسجيل دخول",
+  "LoginToYourAccount": "تسجيل دخول لحسابك"
+}

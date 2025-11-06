@@ -1,0 +1,7 @@
+{
+  "i18n-ally.localesPaths": ["locales"],
+  "i18n-ally.keystyle": "nested",
+  "files.autoSave": "onWindowChange",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
+}

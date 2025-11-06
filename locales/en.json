@@ -1,0 +1,22 @@
+{
+  "WelcomeHeader": "Welcome to Arweqah",
+  "WelcomeDescription": " Discover amazing content, connect with creators, and share your own stories with our vibrant community.",
+  "ExploreFeeds": "Explore Feeds",
+  "LatestContentTitle": "Latest Feeds",
+  "LatestContentDesc": "Stay updated with the latest posts from our community.",
+  "LatestContentLink": "View feeds",
+  "ConnectWithOthersTitle": "Connect with Others",
+  "ConnectWithOthersDesc": "Engage with creators and fellow users through comments, likes, and shares.",
+  "CommingSoon": "Coming Soon",
+  "JoinDiscussionsTitle": "Join Discussions",
+  "JoinDiscussionsDesc": "Participate in discussions and share your thoughts on various topics.",
+  "SearchPosts": "Search Posts",
+  "NoMorePosts": "No more posts.....",
+  "PostDetails": "Post Details",
+  "BackToFeeds": "Back to Feeds",
+  "NewFeeds": "New Feeds",
+  "Home": "Home",
+  "FailedFetchPost": " Could not load posts, kindly try again later",
+  "Login": "Login",
+  "LoginToYourAccount": "Login To Your Account"
+}

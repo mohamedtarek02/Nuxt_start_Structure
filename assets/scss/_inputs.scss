@@ -1,0 +1,162 @@
+@use "helpers" as *;
+
+body {
+  .v-input--density-default .v-field--variant-outlined,
+  .v-input--density-default .v-field--single-line,
+  .v-input--density-default .v-field--no-label {
+    --v-input-padding-bottom: 0.75rem;
+  }
+
+  .v-field__input,
+  .v-input--density-default {
+    --v-input-control-height: 1.25rem;
+  }
+
+  .v-field,
+  .v-field__field {
+    --v-field-padding-start: 0.62rem;
+    --v-field-padding-end: 0.62rem;
+  }
+  .v-field--variant-outlined {
+    border-radius: 8px !important;
+  }
+
+  .v-field__field {
+    outline: 0;
+  }
+
+  .v-input,
+  .v-field {
+    font-size: 14px;
+    color: var(--input-font-color);
+
+    @include rtl() {
+      direction: rtl;
+    }
+  }
+
+  .v-label {
+    margin: 0 12px;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--input-font-color);
+
+    @include rtl() {
+      right: 0;
+    }
+
+    @include ltr() {
+      left: 0;
+    }
+  }
+
+  .v-input__details {
+    min-height: 18px;
+    padding: 0px !important;
+    margin-bottom: 0.5rem;
+    opacity: 1 !important;
+    .v-counter {
+      line-height: 1;
+    }
+  }
+
+  .v-field--variant-outlined .v-field__outline {
+    --v-field-border-opacity: 0.2;
+  }
+
+  .v-field:hover .v-field__outline,
+  .v-field--variant-outlined.v-field--focused .v-field__outline {
+    --v-field-border-width: 1px;
+    --v-field-border-opacity: 0.5;
+  }
+
+  .v-field__outline {
+    border-radius: 8px;
+    &:hover {
+      border-radius: 8px;
+    }
+  }
+  .v-input__details {
+    display: none;
+  }
+
+  .v-input--error .v-input__details {
+    display: flex;
+  }
+}
+
+.app-dialog__content {
+  border: unset !important;
+}
+
+.v-label,
+.v-select__selections {
+  font-weight: 300 !important;
+}
+
+/* For Inputs Text Area*/
+.v-textarea textarea {
+  height: 120px;
+}
+
+.v-field__append-inner:after {
+  @include rtl() {
+    right: 0;
+    left: unset;
+  }
+}
+
+/* For Error Messages */
+.v-messages {
+  &__message {
+    color: var(--v-theme-error);
+  }
+}
+
+.v-autocomplete .v-field__field input.v-field__input,
+.v-text-field .v-field__field input.v-field__input {
+  min-height: 0px !important;
+  line-height: 24px;
+  padding: 10px 14px !important;
+  @include ltr() {
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+  }
+  @include rtl() {
+    border-top-left-radius: 8px !important;
+    border-bottom-left-radius: 8px !important;
+  }
+}
+
+.v-field--variant-outlined.v-field--loading .v-field__loader {
+  width: calc(100% - 42px);
+  height: calc(100% - 2px);
+  z-index: 9;
+  background-color: #fff;
+  top: 1px !important;
+  right: 1px;
+}
+.v-text-field .v-field--no-label input,
+.v-text-field .v-field--active input {
+  color: #000;
+}
+.v-field--disabled,
+.v-field--disabled#input-123,
+.v-textarea .v-field__input[readonly] {
+  background-color: #f5f5f5 !important;
+  opacity: 0.5 !important;
+}
+.datepicker--time.disabled,
+.mx-datepicker.disabled .v-field__input[readonly] {
+  background-color: #f5f5f5 !important;
+  opacity: 0.5 !important;
+}
+
+.v-field__prepend-inner {
+  background-color: white !important;
+  padding-inline-end: 6px !important;
+}
+
+.v-field {
+  background-color: white !important;
+}
