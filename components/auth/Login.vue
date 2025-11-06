@@ -42,7 +42,7 @@ function login(userCredential) {
   isLoading.value = true;
 
   setTimeout(() => {
-    notifyUser("Logged in successfully");
+    notifyUser("Logged in");
     setUserAuth({
       email: userCredential.email,
       username: "Demo User",
