@@ -3,12 +3,12 @@ import { ref, defineEmits, computed, inject } from "vue";
 import * as yup from "yup";
 import { Form } from "vee-validate";
 import { useRouter, useCookie } from "#imports";
-import axios from "axios";
 
-import { useAuthStore } from "@/stores/auth.js";
+import { useAuthStore } from "~/stores/auth";
 const authStore = useAuthStore();
 
 import notifyUser from "@/utils/notifyUser";
+import setUserAuth from "@/utils/setUserAuth";
 
 import { useI18n } from "#imports";
 const { t, locale } = useI18n({ useScope: "global" });
@@ -30,39 +30,26 @@ const isShowingLoginModal = computed({
 });
 
 const schema = yup.object({
-  UserName: yup.string().required().label(t("Email")),
-  Password: yup.string().required().label(t("Password")),
+  email: yup.string().required().label(t("Email")),
+  password: yup.string().required().label(t("Password")),
 });
 
 const isLoading = ref(false);
-const showCompleteRegisterModal = ref(false);
 const savedLanguage = useCookie("preferred-language");
 
-function login(model) {
+function login(userCredential) {
   if (isLoading.value) return;
   isLoading.value = true;
-  axios
-    .post("Auth/PublicLogin", model)
-    .then(({ data }) => {
-      authStore.updateUser(data.Data);
-      axios.post("Auth/UpdateCurrentUserLang", { Lang: savedLanguage.value });
-      notifyUser(t("LoginSuccess"), "success");
-      useCookie("isLoggedIn").value = true;
-      useCookie("userType").value = data.Data.UserType;
-      useCookie("userName").value = data.Data.FullName;
-      if (data.Data.UserType === "Customer" && !data.Data.IsCompleted) {
-        isShowingLoginModal.value = false;
-      } else {
-        isShowingLoginModal.value = false;
-      }
-      router.push(`/${locale.value}/dashboard`);
-    })
-    .catch((err) => {
-      notifyUser(err, "error");
-    })
-    .finally(() => {
-      isLoading.value = false;
+
+  setTimeout(() => {
+    notifyUser("Logged in successfully");
+    setUserAuth({
+      email: userCredential.email,
+      username: "Demo User",
     });
+    isShowingLoginModal.value = false;
+    isLoading.value = false;
+  }, 2000);
 }
 
 const showResetPasswordModal = ref(false);
@@ -100,7 +87,7 @@ function forgetPasswordHandler() {
           <section>
             <InputsTextField
               :label="$t('Email')"
-              name="UserName"
+              name="email"
               required
               placeHolder="youremail@mail.com"
               class="mb-5"
@@ -108,7 +95,7 @@ function forgetPasswordHandler() {
             />
             <InputsTextField
               :label="$t('Password')"
-              name="Password"
+              name="password"
               type="password"
               icon="hand"
               required
@@ -140,7 +127,7 @@ function forgetPasswordHandler() {
     </div>
   </AuthWrappingModal>
 
-  <AuthComponentsResetPassword
+  <AuthResetPassword
     v-model:showResetPasswordModal="showResetPasswordModal"
     @close="showResetPasswordModal = false"
   />

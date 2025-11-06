@@ -1,0 +1,63 @@
+.v-notification {
+  margin: 15px;
+  padding: 8px 12px 8px 36px; /* extra left space for icon */
+  font-size: 16px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #404252;
+  position: relative; /* required for ::before positioning */
+  display: flex;
+  align-items: center;
+
+  .notification-content {
+    margin: 0 4px;
+    flex: 1;
+  }
+
+  &.success {
+    background: #404252;
+    border-bottom: 2px solid #52c77b;
+  }
+
+  &.warn {
+    background: #404252;
+    border-bottom: 2px solid #f48a06;
+  }
+
+  &.error {
+    background: #404252;
+    border-bottom: 2px solid #b82e24;
+  }
+  &.success::before,
+  &.warn::before,
+  &.error::before {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    background: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+  }
+
+  &.success::before {
+    content: "✓";
+    color: #52c77b;
+  }
+
+  &.warn::before {
+    content: "⚠";
+    color: #f48a06;
+  }
+
+  &.error::before {
+    content: "✖";
+    color: #c90000;
+  }
+}

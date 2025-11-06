@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useAuthStore } from "@/stores/auth.js";
+import { useAuthStore } from "@/stores/auth";
 import { useCookie, useRouter } from "#imports";
 
 axios.defaults.baseURL = "https://jsonplaceholder.typicode.com/"; // Default base URL

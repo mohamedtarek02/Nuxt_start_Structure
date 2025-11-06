@@ -44,39 +44,11 @@ watch(
       classes="v-notification"
       pauseOnHover
       dangerouslySetInnerHtml
+      duration="1"
+      position="bottom right"
     />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
   </div>
 </template>
-
-<style lang="scss">
-.v-notification {
-  margin: 15px;
-  padding: 25px 20px;
-  font-size: 16px;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-
-  .notification-content {
-    text-align: center;
-  }
-
-  &.success {
-    background: #388e3c;
-    border-left-color: #42a85f;
-  }
-
-  &.warn {
-    background: #ffb648;
-    border-left-color: #f48a06;
-  }
-
-  &.error {
-    background: #e54d42;
-    border-left-color: #b82e24;
-  }
-}
-</style>
